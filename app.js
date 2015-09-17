@@ -76,14 +76,14 @@ $(function(){
 		};
 		for(var i = 0; i < numberOfGroups; i++){
 			var appendArray = masterArray[i].join('<br>');
-			var appendMessage = "<div class='toRemove'><h3> Group "+ (i + 1) + "</h3><p>" + appendArray + "</p></div>";
+			var appendMessage = "<div class='toRemove' style='width:" + (80 / numberOfGroups) + "%'><h3> Group "+ (i + 1) + "</h3><p>" + appendArray + "</p></div>";
 
 			$(".appendGroupsHere").append(appendMessage);
 		};
 		namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
 			"Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
 			"Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
-		
+
 		masterArray = [];
 	});
 	

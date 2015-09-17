@@ -1,3 +1,40 @@
-#11 {
-	background-color: red;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+main {
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+}
+h1{
+	color: #4a0000;
+}
+h3{
+	text-decoration: underline;
+}
+.appendGroupsHere{
+	display: flex;
+}
+.toRemove {
+	float: left;
+	padding: 0 5px;
+	height: auto;
+	margin: 0 auto;
+	justify-content: center;
+	background-color: #0099FF;
+}
+.toRemove:nth-child(even){
+	background-color: beige;
+}
+button {
+	padding: 5px 30px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background: none;
+	border: 1px solid#0099FF;
+	cursor: pointer;
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+	outline: none;
+}
+button:hover{
+	background: beige;
 }
