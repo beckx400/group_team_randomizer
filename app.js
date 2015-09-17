@@ -1,8 +1,19 @@
 $(function(){
-	var namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
-	"Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
-	"Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
+	// var namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
+	// "Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
+	// "Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
+	var namesArray = [];
 
+	function callAjax(){
+		$.ajax({
+			url: "names.json"
+		}).done(function(response){
+			namesArray = response.names;
+		});
+	};
+	callAjax();
+
+console.log(namesArray);
 	function randomNumberGenerator(){
 		return Math.floor(Math.random() * (namesArray.length));	
 	}
@@ -80,9 +91,7 @@ $(function(){
 
 			$(".appendGroupsHere").append(appendMessage);
 		};
-		namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
-			"Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
-			"Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
+		callAjax();
 
 		masterArray = [];
 	});
