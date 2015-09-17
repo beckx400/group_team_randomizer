@@ -10,6 +10,7 @@ $(function(){
 	var masterArray = [];
 //To do, refactor into a for loop
 	$(".group-selector").on("click", function(){
+		$(".toRemove").remove();
 		var numberOfGroups = parseInt($(this).attr("ID"));
 
 		switch(numberOfGroups){
@@ -73,10 +74,17 @@ $(function(){
 				groupCounter = 0;
 			};
 		};
-		console.log(masterArray);
+		for(var i = 0; i < numberOfGroups; i++){
+			var appendArray = masterArray[i].join('<br>');
+			var appendMessage = "<div class='toRemove'><h3> Group "+ (i + 1) + "</h3><p>" + appendArray + "</p></div>";
+
+			$(".appendGroupsHere").append(appendMessage);
+		};
+		namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
+			"Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
+			"Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
+		
+		masterArray = [];
 	});
 	
-	namesArray =["Aarti", "Amelia", "Brian", "Danielle", "Dave B.", "Dave H.", 
-		"Doug", "Erick", "Geoffrey", "Jake", "John", "Jonathan", "Laura", "Lauren", 
-		"Liz", "Manu", "Nick", "Ryan", "Sarah", "Zach"];
 });
